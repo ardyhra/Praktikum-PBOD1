@@ -138,7 +138,6 @@ public class Main {
                     int courseIndex = scanner.nextInt();
                     Course selectedCourse = courses.get(courseIndex - 1);
 
-                    // Melakukan enroll mahasiswa ke kursus
                     selectedCourse.addStudent(selectedStudent);
                     System.out.println(selectedStudent.getName() + " berhasil dienroll ke kursus " + selectedCourse.getCourseName());
                     break;
