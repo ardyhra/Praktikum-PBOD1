@@ -2,9 +2,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Student {
-    /* TODO: implementasi enkapsulasi dengan 
-       berikan akses yang sesuai
-    */
 
     private String name;
     private int age;
@@ -13,7 +10,6 @@ public class Student {
     public List<Course> coursesEnrolled;
 
     Student(String name, int age, String address, int studentID) {
-        // TODO: buatlah fungsi konstruktor
         this.coursesEnrolled = new ArrayList<>();
         setName(name);
         setAge(age);
@@ -56,27 +52,29 @@ public class Student {
     }
 
     public void getDetails() {
-        /* TODO: buat fungsi untuk print detail dari Student,
-           menampilkan nama, umur, alamat, dan ID
-        */
+
         System.out.printf("Nama : %s, Umur : %d tahun, Alamat : %s, ID Siswa : %d\n", getName(), getAge(), getAddress(), getStudentID());
     }
 
     public void enrollInCourse(Course course) {
-        // TODO: buatlah fungsi untuk menambah sebuah course
-        // ke dalam daftar course yang diikuti oleh siswa ini
+
         this.coursesEnrolled.add(course);
         if (!course.studentsEnrolled.contains(this)) {
             course.addStudent(this);
         }
     }
+    
+    public void removeCourse(Course course) {
+        if (coursesEnrolled.contains(course)) {
+            coursesEnrolled.remove(course);
+            course.removeStudent(this);
+        } else {
+            System.out.println("Mahasiswa tidak terdaftar dalam kursus ini.");
+        }
+    }
 
     public void viewEnrolledCourses() {
-        /* TODO: buatlah fungsi untuk menampilkan seluruh course 
-           yang diambil oleh mahasiswa.
 
-           Hint: gunakan loop dan method getDetails dari Course
-        */
         System.out.printf("Daftar Kursus Yang diikuti mahasiswa bernama %s : \n",getName());
         for (Course c : coursesEnrolled) {
             c.getDetails();
@@ -84,5 +82,4 @@ public class Student {
         System.out.println();
     }
 
-    // Other methods...
 }
