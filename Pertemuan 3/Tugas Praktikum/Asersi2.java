@@ -23,7 +23,7 @@ public class Asersi2 {
         lingkaran.setJariJari(-1);
         // double jariJari = -1; {diganti dengan baris di atas}
 
-        assert(lingkaran.getJariJari()>0): "jari-jari tidak boleh nol";
+        assert(lingkaran.getJariJari()>0): "jari-jari tidak boleh nol atau negatif";
         // Lingkaran lingkaran = new Lingkaran(jariJari); {diganti}
         double kelilingLingkaran = lingkaran.hitungKeliling();
         System.out.println("Keliling lingkaran = "+kelilingLingkaran);
