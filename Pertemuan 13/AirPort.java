@@ -1,4 +1,4 @@
-public class AirPort extends Airplane {
+public class AirPort {
     private Airplane airplane;
     private String name;
 
@@ -21,20 +21,5 @@ public class AirPort extends Airplane {
         else {
             return "Tidak diizinkan mendarat";
         }
-    }
-
-    @Override
-    public void takeOff() {
-        System.out.println("Airport mengizinkan lepas landas");
-    }
-
-    @Override
-    public void land() {
-        System.out.println("Airport mengizinkan mendarat");
-    }
-
-    @Override
-    public void fly() {
-        System.out.println("Airport mengizinkan terbang");
     }
 }
